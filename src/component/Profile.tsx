@@ -11,7 +11,16 @@ const StyledProfile = styled.div`
   background-color: purple;
 
   display: flex;
-  
+
+  @media (max-width: 768px) {
+    position: static; 
+    padding: 0em;
+    width: 100%; 
+    min-height: 18em;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: center;
+  }
 `;
 
 const StyledContent = styled.div`
@@ -23,6 +32,16 @@ const StyledContent = styled.div`
   height: 18em;
   border-radius: 1em;
   background-color: blue;
+
+  @media (max-width: 768px) {
+    position: static; 
+    padding: 0em;
+    width: 100%; 
+    min-height: 18em;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: center;
+  }
 `;
 
 const StyledProfilePicture = styled.img`
@@ -49,6 +68,9 @@ const StyledLink = styled.ul`
   padding-bottom: 1.5em;
   text-align: left;
   padding-left: 1.5em;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const StyledLinkItem = styled.div``;

@@ -24,7 +24,6 @@ function AppLayout() {
   return (
     <StyledLayout>
       <Profile />
-      {/* <Test>Hello World</Test> */}
       <ActivityList />
     </StyledLayout>
   );
