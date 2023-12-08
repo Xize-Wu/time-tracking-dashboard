@@ -40,7 +40,7 @@ const StyledContent = styled.div`
   position: absolute;
 
   &:hover {
-    background-color: blue; 
+    background-color: var(hover-activity-background-color); 
 
 `
 

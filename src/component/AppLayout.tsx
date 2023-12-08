@@ -3,10 +3,14 @@ import Profile from "./Profile";
 import ActivityList from "./ActivityList";
 
 const StyledLayout = styled.main`
-display: flex;
-  background-color: transparent;
-  padding:10em;
-  border-radius: 25px;
+  display: flex;
+  background-color: red;
+  width: 75%;
+  height: 50%;
+  flex-basis:50%;
+  justify-content: center;
+  align-content: center;
+
 `;
 
 function AppLayout() {

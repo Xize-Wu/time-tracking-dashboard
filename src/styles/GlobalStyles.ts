@@ -15,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     color: white;
     font-size: 18px;
   }
