@@ -26,6 +26,7 @@ const StyledCard = styled.div`
   height: 10em;
   background-color: green;
   border-radius: 1em;
+  margin: 2px;
 `
 
 const StyledContent = styled.div`
@@ -40,7 +41,7 @@ const StyledContent = styled.div`
   position: absolute;
 
   &:hover {
-    background-color: var(hover-activity-background-color); 
+    background-color: var(--hover-activity-background-color); 
 
 `
 

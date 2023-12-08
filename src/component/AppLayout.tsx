@@ -4,19 +4,27 @@ import ActivityList from "./ActivityList";
 
 const StyledLayout = styled.main`
   display: flex;
-  background-color: red;
   width: 75%;
   height: 50%;
-  flex-basis:50%;
   justify-content: center;
   align-content: center;
+  padding: 1em;
+
+  @media(max-width: 768px){
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 0em;
+    }
 
 `;
+
 
 function AppLayout() {
   return (
     <StyledLayout>
       <Profile />
+      {/* <Test>Hello World</Test> */}
       <ActivityList />
     </StyledLayout>
   );
