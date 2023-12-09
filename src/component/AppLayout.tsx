@@ -13,7 +13,6 @@ const StyledLayout = styled.main`
   @media(max-width: 768px){
     flex-direction: column;
     justify-content: center;
-    align-content: center;
     padding: 0em;
     }
 

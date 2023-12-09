@@ -22,7 +22,7 @@ const StyledPeriod = styled.div`
 
 const StyledCard = styled.div`
   position: relative;
-  width: 12em;
+  min-width: 12em;
   height: 10em;
   background-color: green;
   border-radius: 1em;
@@ -30,7 +30,7 @@ const StyledCard = styled.div`
 `
 
 const StyledContent = styled.div`
-  width: 12em;
+  min-width: 12em;
   height: 9em;
   background-color: var(--primary-activity-background-color);
   border-radius: 1em;
@@ -38,7 +38,7 @@ const StyledContent = styled.div`
 
   top: 2.5rem;
   left: 0;
-  position: absolute;
+  position: relative;
 
   &:hover {
     background-color: var(--hover-activity-background-color); 
@@ -56,7 +56,7 @@ function ActivityComponent() {
               <path
                 d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
                 fill="#BBC0FF"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               />
             </svg>
           </div>

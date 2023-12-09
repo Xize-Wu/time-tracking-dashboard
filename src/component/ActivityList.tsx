@@ -2,12 +2,16 @@ import { styled, css } from "styled-components";
 import ActivityComponent from "./timeList/SingleActivity";
 
 const StyledList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 42em;
+  display: grid;
+  max-width: 42rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   @media (max-width: 768px) {
+    
+    padding-top: 2rem;
+    padding-left: 0rem;
     min-width: 100%;
-    justify-content: space-evenly;
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 
@@ -16,7 +20,6 @@ function ActivityList() {
     <StyledList>
       <ActivityComponent />
       <ActivityComponent />
-
       <ActivityComponent />
       <ActivityComponent />
       <ActivityComponent />
