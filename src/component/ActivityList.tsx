@@ -1,5 +1,5 @@
-import { styled, css } from "styled-components";
-import ActivityComponent from "./timeList/SingleActivity";
+import { styled } from "styled-components";
+import ActivityComponent from "./activityList/ActivityComponent";
 
 const StyledList = styled.ul`
   display: grid;
