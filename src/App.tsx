@@ -1,6 +1,7 @@
 import AppLayout from "./component/AppLayout";
 import GlobalStyle from "./styles/GlobalStyles";
 import styled from "styled-components";
+import { ActivityProvider } from "./context/activityContext";
 
 const Wrapper = styled.div`
   display: grid;
@@ -16,10 +17,12 @@ const Wrapper = styled.div`
 
 function App() {
   return (
+    <ActivityProvider>
     <Wrapper>
       <GlobalStyle />
       <AppLayout />
     </Wrapper>
+    </ActivityProvider>
   );
 }
 

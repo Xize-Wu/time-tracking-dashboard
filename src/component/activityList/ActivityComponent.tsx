@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 
+import { useActivity } from "../../context/activityContext";
 const StyledActivityName = styled.div`
   display: flex;
   justify-content: space-between;
@@ -14,7 +15,7 @@ const StyledTime = styled.div`
 
 `;
 
-const StyledPeriod = styled.div`
+const StyledTimeAccu = styled.div`
   font-size: 12px;
   padding-left: 1.5em;
   color: var(--note-text-color);
@@ -46,6 +47,7 @@ const StyledContent = styled.div`
 `
 
 function ActivityComponent() {
+  const {period} = useActivity();
   return (
     <StyledCard>
       <StyledContent>
@@ -62,7 +64,7 @@ function ActivityComponent() {
           </div>
         </StyledActivityName>
         <StyledTime>32 hrs</StyledTime>
-        <StyledPeriod>Last Week - 36hrs</StyledPeriod>
+        <StyledTimeAccu>Last {period} - 36hrs</StyledTimeAccu>
       </StyledContent>
 
     </StyledCard>

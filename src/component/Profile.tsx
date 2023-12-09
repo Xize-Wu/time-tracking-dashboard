@@ -1,5 +1,7 @@
 import { styled, css } from "styled-components";
+
 import jeremy from "../../images/image-jeremy.png";
+import { useActivity } from "../context/activityContext";
 
 const StyledProfile = styled.div`
   position: relative;
@@ -13,14 +15,13 @@ const StyledProfile = styled.div`
   display: flex;
 
   @media (max-width: 768px) {
-    position: static; 
+    position: static;
     padding: 0em;
-    width: 100%; 
+    width: 100%;
     min-height: 10em;
     flex-direction: column;
     justify-content: flex-end;
     align-content: center;
-
   }
 `;
 
@@ -35,14 +36,13 @@ const StyledContent = styled.div`
   background-color: blue;
 
   @media (max-width: 768px) {
-    position: static; 
+    position: static;
     padding: 0em;
-    width: 100%; 
+    width: 100%;
     min-height: 8em;
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    
   }
 `;
 
@@ -56,9 +56,7 @@ const StyledProfilePicture = styled.img`
     margin-left: 0.5rem;
     height: 6rem;
     width: 6rem;
-
   }
-
 `;
 
 const StyledTextContent = styled.div`
@@ -67,7 +65,7 @@ const StyledTextContent = styled.div`
   flex-direction: column;
   margin-top: 0.5rem;
 
-`
+`;
 const StyledText = styled.div`
   padding-bottom: 0.5em;
 `;
@@ -77,7 +75,6 @@ const StyledName = styled.div`
   @media (max-width: 768px) {
     font-size: 32px;
   }
-
 `;
 
 const StyledLink = styled.ul`
@@ -98,22 +95,30 @@ const StyledLink = styled.ul`
 const StyledLinkItem = styled.div``;
 
 function Profile() {
-  return (
-    <StyledProfile>
-      <StyledContent>
-        <StyledProfilePicture src={jeremy} alt="profile-picture" />
-        <StyledTextContent>
-        <StyledText>Report for</StyledText>
-        <StyledName>Jeremy Robson</StyledName>
-        </StyledTextContent>
-      </StyledContent>
-      <StyledLink>
-        <StyledLinkItem>Daily</StyledLinkItem>
-        <StyledLinkItem>Weekly</StyledLinkItem>
-        <StyledLinkItem>Monthly</StyledLinkItem>
-      </StyledLink>
-    </StyledProfile>
-  );
-}
+  const { period,changePeriod } = useActivity();
+
+    return (
+      <StyledProfile>
+        <StyledContent>
+          <StyledProfilePicture src={jeremy} alt="profile-picture" />
+          <StyledTextContent>
+            <StyledText>Report for</StyledText>
+            <StyledName>Jeremy Robson</StyledName>
+          </StyledTextContent>
+        </StyledContent>
+        <StyledLink>
+        <StyledLinkItem onClick={() => changePeriod("Day")}>
+            Daily
+          </StyledLinkItem>
+          <StyledLinkItem onClick={() => changePeriod("Week")}>
+            Weekly
+          </StyledLinkItem>
+          <StyledLinkItem onClick={() => changePeriod("Month")}>
+            Monthly
+          </StyledLinkItem>
+        </StyledLink>
+      </StyledProfile>
+    );
+  };
 
 export default Profile;
