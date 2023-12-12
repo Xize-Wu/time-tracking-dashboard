@@ -43,7 +43,7 @@ const StyledContent = styled.div`
 
   &:hover {
     background-color: var(--hover-activity-background-color); 
-
+  }
 `
 interface TimeFrameConfig {
   Day: 'daily',
@@ -57,13 +57,22 @@ const TimeFrame:TimeFrameConfig= {
   Week: 'weekly',
 }
 
-function ActivityComponent(props) {
+interface ActivityPropsConfig {
+  activityItem: {
+    title: string;
+    timeframes: {
+      daily: { current: number; previous: number };
+      monthly: { current: number; previous: number };
+      weekly: { current: number; previous: number };
+    };
+  };
+}
+
+function ActivityComponent(props: ActivityPropsConfig) {
   const { period } = useActivity() as { period: 'Day' | 'Month' | 'Week' };
   const timeFrameValue: 'daily' | 'monthly' | 'weekly' = TimeFrame[period];
   const {activityItem} = props;
-  // console.log(testObj)
-  console.log(activityItem)
-
+ 
   return (
     <StyledCard>
       <StyledContent>
