@@ -45,14 +45,30 @@ const StyledContent = styled.div`
     background-color: var(--hover-activity-background-color); 
 
 `
+interface TimeFrameConfig {
+  Day: 'daily',
+  Month: 'monthly',
+  Week: 'weekly',
+}
 
-function ActivityComponent() {
-  const {period} = useActivity();
+const TimeFrame:TimeFrameConfig= {
+  Day: 'daily',
+  Month: 'monthly',
+  Week: 'weekly',
+}
+
+function ActivityComponent(props) {
+  const { period } = useActivity() as { period: 'Day' | 'Month' | 'Week' };
+  const timeFrameValue: 'daily' | 'monthly' | 'weekly' = TimeFrame[period];
+  const {activityItem} = props;
+  // console.log(testObj)
+  console.log(activityItem)
+
   return (
     <StyledCard>
       <StyledContent>
         <StyledActivityName>
-          <div>Work</div>
+          <div>{activityItem.title}</div>
           <div>
             <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -63,8 +79,8 @@ function ActivityComponent() {
             </svg>
           </div>
         </StyledActivityName>
-        <StyledTime>32 hrs</StyledTime>
-        <StyledTimeAccu>Last {period} - 36hrs</StyledTimeAccu>
+        <StyledTime>{activityItem["timeframes"][timeFrameValue]["current"]} hrs</StyledTime>
+        <StyledTimeAccu>Last {period} - {activityItem["timeframes"][timeFrameValue]["previous"]}hrs</StyledTimeAccu>
       </StyledContent>
 
     </StyledCard>
