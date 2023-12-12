@@ -6,7 +6,6 @@ import { useActivity } from "../context/activityContext";
 const StyledProfile = styled.div`
   position: relative;
   margin-top: 7rem;
-  margin-left: 0rem;
   width: 12em;
   height: 18em;
   border-radius: 1em;
@@ -15,6 +14,7 @@ const StyledProfile = styled.div`
   display: flex;
 
   @media (max-width: 768px) {
+    margin-top: 0rem;
     position: static;
     padding: 0em;
     width: 100%;
@@ -39,7 +39,6 @@ const StyledContent = styled.div`
     position: static;
     padding: 0em;
     width: 100%;
-    min-height: 8em;
     display: flex;
     flex-direction: row;
     gap: 2rem;

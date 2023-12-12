@@ -15,7 +15,6 @@ const StyledLayout = styled.main`
     justify-content: center;
     padding: 0em;
     }
-
 `;
 
 
