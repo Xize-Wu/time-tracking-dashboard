@@ -1,6 +1,5 @@
 import { styled, css } from "styled-components";
 
-import jeremy from "../../images/image-jeremy.png";
 import { useActivity } from "../context/activityContext";
 
 const StyledProfile = styled.div`
@@ -99,7 +98,7 @@ function Profile() {
     return (
       <StyledProfile>
         <StyledContent>
-          <StyledProfilePicture src={jeremy} alt="profile-picture" />
+          <StyledProfilePicture src={"../../public/images/image-jeremy.png"} alt="profile-picture" />
           <StyledTextContent>
             <StyledText>Report for</StyledText>
             <StyledName>Jeremy Robson</StyledName>
